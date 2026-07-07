@@ -94,7 +94,47 @@ Cron treats tabs as field separators, so the second row executes `touch /tmp/gli
 
 ## 7. Dynamic Verification
 
-The QEMU/rootfs probe:
+### 7.1 Lua RPC Harness
+
+The stronger QEMU harness:
+
+```text
+poc/verify_glinet_ui_update_langs_rpc_lua_cron_cmdi_2026_07_07.sh
+```
+
+loads:
+
+- the real `usr/share/gl-validator.d/ui.lua` validator;
+- the real `usr/lib/oui-httpd/rpc/ui` Lua RPC module;
+- the firmware `uci` Lua module under `qemu-aarch64`;
+- minimal `ngx`, `ubus`, and filesystem stubs needed to run the Lua module outside nginx.
+
+It confirms the malicious argument passes validation and reaches `ui.update_langs`:
+
+```text
+VALIDATOR_RC=0
+NGX_SPAWN=/etc/init.d/gl_timer restart
+```
+
+It then confirms cron injection and command execution:
+
+```text
+--- generated cron ---
+0 0 * * 1$
+0-59\t0-23\t1-31\t1-12\t0-6\ttouch\t/tmp/glinet_ui_rpc_timer_pwn\t# gl_timer_control_langs 1 1$
+
+MARKER_CREATED=/tmp/glinet_ui_rpc_timer_pwn
+```
+
+Full captured output:
+
+```text
+evidence/verify_qemu_lua_rpc_update_langs_cron_cmdi_output.txt
+```
+
+### 7.2 Rootfs Cron Harness
+
+The secondary QEMU/rootfs probe:
 
 ```text
 poc/verify_glinet_ui_update_langs_gl_timer_cron_cmdi_2026_07_07.sh
@@ -120,6 +160,8 @@ Key observed output:
 
 MARKER_CREATED=/tmp/glinet_ui_timer_pwn
 ```
+
+This second harness validates the persistence and cron-generation boundary independently of the Lua RPC method call.
 
 ## 8. Affected Local Firmware
 

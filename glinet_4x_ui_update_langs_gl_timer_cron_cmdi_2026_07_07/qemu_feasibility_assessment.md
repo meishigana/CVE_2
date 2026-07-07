@@ -2,7 +2,16 @@
 
 ## What Was Verified
 
-The included QEMU/rootfs harness verifies:
+The included QEMU Lua RPC harness verifies:
+
+- the real `ui.lua` validator has no `update_langs` method rule;
+- the exact malicious `week` argument passes the fallback RPC string validator;
+- the real `usr/lib/oui-httpd/rpc/ui` module's `update_langs` function accepts the argument;
+- the firmware `uci` Lua module persists the malicious `gl_timer.langs.week` value;
+- the generated cron content contains an injected second cron line;
+- the injected command creates `/tmp/glinet_ui_rpc_timer_pwn`.
+
+The secondary QEMU/rootfs harness verifies:
 
 - the firmware `uci` binary accepts and persists a `gl_timer.langs.week` value containing newline and tab characters;
 - the persisted value survives `uci get`;
@@ -19,7 +28,7 @@ This package does not claim:
 
 ## Why The Evidence Is Still Useful
 
-The remaining unverified part is the web transport. The RPC source path and validator behavior are statically clear:
+The remaining unverified part is the HTTP/nginx session transport. The RPC source path and validator behavior are now covered by the Lua RPC harness and static evidence:
 
 - `ui.update_langs` exists in the reviewed `ui` RPC module on MT3000, MT6000, and X3000 firmware.
 - `ui.lua` validator lacks an `update_langs` rule.

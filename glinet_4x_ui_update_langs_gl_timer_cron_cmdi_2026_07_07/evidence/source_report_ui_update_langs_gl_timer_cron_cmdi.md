@@ -54,6 +54,28 @@ The sanitizer only converts ASCII spaces to commas. It does not remove newlines 
 
 ## Dynamic evidence
 
+Primary Lua RPC probe script:
+
+```text
+analysis/GL.iNet/scratch/probe_ui_update_langs_rpc_lua.sh
+```
+
+Captured output:
+
+```text
+analysis/GL.iNet/scratch/probe_ui_update_langs_rpc_lua_output.txt
+```
+
+The Lua RPC harness loads the real `usr/share/gl-validator.d/ui.lua` validator, the real `usr/lib/oui-httpd/rpc/ui` module, and the firmware `uci` Lua module under `qemu-aarch64`. It stubs only the surrounding nginx/ubus/filesystem runtime dependencies. The output shows that the malicious `week` value passes validation, reaches `ui.update_langs`, persists in UCI, generates an injected cron line, and creates:
+
+```text
+MARKER_CREATED=/tmp/glinet_ui_rpc_timer_pwn
+```
+
+`/cgi-bin/glc` is not the relevant dispatch layer for this issue because `ui.update_langs` is implemented as a Lua RPC method, not as a C `.so` RPC handler. A full production nginx `/rpc` login-session run is not claimed in this package.
+
+Secondary rootfs cron-generation probe script:
+
 Probe script:
 
 ```text
@@ -74,8 +96,9 @@ MARKER_CREATED=/tmp/glinet_ui_timer_pwn
 
 ## Status
 
-This is a high-value candidate for a new CVE submission. Remaining work before packaging:
+This is a high-value candidate for a new CVE submission. Current evidence status:
 
-- Run a full `/rpc` or `/cgi-bin/glc` harness request for `ui.update_langs` if practical.
-- Preserve the current QEMU/rootfs cron evidence and add static excerpts for the validator, `ui.update_langs`, and `/etc/init.d/gl_timer`.
+- Lua RPC harness completed for validator-to-`ui.update_langs`-to-UCI-to-cron execution.
+- QEMU/rootfs cron evidence preserved for the gl_timer sink.
+- Static excerpts are preserved for the validator, `ui.update_langs`, and `/etc/init.d/gl_timer`.
 - Re-run public duplicate search immediately before submission.

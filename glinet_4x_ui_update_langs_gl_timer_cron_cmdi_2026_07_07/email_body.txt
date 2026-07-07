@@ -18,6 +18,6 @@ Locally reviewed affected firmware:
 - GL-MT6000 4.9.0
 - GL-X3000 4.8.3
 
-The attached material includes a technical report, PoC request shape, QEMU/rootfs verification script, captured output, and duplicate-risk notes. The QEMU/rootfs proof shows the generated injected cron line and marker-file command execution.
+The attached material includes a technical report, PoC request shape, QEMU Lua RPC verification script, QEMU/rootfs verification script, captured output, and duplicate-risk notes. The Lua RPC proof shows validator pass-through and real `ui.update_langs` invocation; the cron proof shows the generated injected cron line and marker-file command execution.
 
 Please confirm whether this should receive a new CVE identifier or be linked to an existing internal advisory.

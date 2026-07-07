@@ -16,10 +16,16 @@
 
 ## Dynamic Evidence
 
+- `evidence/verify_qemu_lua_rpc_update_langs_cron_cmdi_output.txt`
+  - Captured output from the QEMU Lua RPC harness. Shows validator pass, real `ui.update_langs` invocation, cron injection, and marker creation.
+
 - `evidence/verify_qemu_rootfs_gl_timer_cron_cmdi_output.txt`
   - Captured output from the QEMU/rootfs cron-generation proof.
 
 ## PoC
+
+- `poc/verify_glinet_ui_update_langs_rpc_lua_cron_cmdi_2026_07_07.sh`
+  - Reproduction script for the Lua RPC validator/method-call proof and generated-cron command execution.
 
 - `poc/verify_glinet_ui_update_langs_gl_timer_cron_cmdi_2026_07_07.sh`
   - Reproduction script for the firmware `uci` persistence and generated-cron command execution proof.

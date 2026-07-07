@@ -1,5 +1,23 @@
 # PoC Reproduction
 
+## QEMU Lua RPC Harness
+
+From the package root:
+
+```sh
+sh ./poc/verify_glinet_ui_update_langs_rpc_lua_cron_cmdi_2026_07_07.sh
+```
+
+Expected success markers:
+
+```text
+VALIDATOR_RC=0
+NGX_SPAWN=/etc/init.d/gl_timer restart
+MARKER_CREATED=/tmp/glinet_ui_rpc_timer_pwn
+```
+
+This harness loads the real `ui` RPC Lua module and real `ui.lua` validator under QEMU. It stubs nginx/ubus runtime APIs only where needed to execute the Lua module outside the router's nginx worker.
+
 ## QEMU/rootfs Harness
 
 From the package root:
@@ -53,5 +71,5 @@ After `gl_timer` restarts or regenerates cron files, the resulting root crontab 
 ## Notes
 
 - This package does not include a real-device proof.
-- The dynamic proof validates persistence through the firmware `uci` binary and command execution through the generated cron line.
+- The Lua RPC harness validates the default RPC validator, real `ui.update_langs` method call, firmware `uci` persistence, and generated-cron command execution.
 - A full `/rpc` proof should use an administrator session and avoid destructive payloads.

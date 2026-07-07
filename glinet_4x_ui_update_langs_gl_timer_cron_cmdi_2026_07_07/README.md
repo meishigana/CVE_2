@@ -66,17 +66,28 @@ All characters in the injected `week` string are accepted by the fallback valida
 
 ## Dynamic Verification
 
-The included QEMU/rootfs harness uses the firmware `uci` binary to persist the malicious schedule value, reproduces the vulnerable `gl_timer` cron generation, and executes the injected cron command line as cron would.
+Two QEMU-based harnesses are included.
+
+The stronger Lua RPC harness loads the real `ui.lua` validator, the real `ui` RPC module, and the firmware `uci` Lua module. It confirms that the malicious `week` value:
+
+1. passes the same default RPC string validator used when `ui.update_langs` has no method-specific rule;
+2. reaches the real `ui.update_langs` implementation;
+3. is persisted into `gl_timer.langs.week`;
+4. causes `gl_timer` cron generation to create an injected cron line;
+5. executes the injected command as cron would.
 
 Observed result:
 
 ```text
-MARKER_CREATED=/tmp/glinet_ui_timer_pwn
+VALIDATOR_RC=0
+NGX_SPAWN=/etc/init.d/gl_timer restart
+MARKER_CREATED=/tmp/glinet_ui_rpc_timer_pwn
 ```
 
 Full output:
 
 ```text
+evidence/verify_qemu_lua_rpc_update_langs_cron_cmdi_output.txt
 evidence/verify_qemu_rootfs_gl_timer_cron_cmdi_output.txt
 ```
 

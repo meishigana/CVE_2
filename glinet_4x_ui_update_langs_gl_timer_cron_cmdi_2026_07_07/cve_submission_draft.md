@@ -58,6 +58,7 @@ Successful exploitation allows root command execution through the generated syst
 The attached package includes:
 
 - static source-to-sink report;
+- QEMU Lua RPC proof that the malicious argument passes validation and reaches the real `ui.update_langs` method;
 - QEMU/rootfs proof that the firmware `uci` binary persists the malicious schedule value;
 - generated cron output showing the injected cron line;
 - marker-file proof of command execution.
