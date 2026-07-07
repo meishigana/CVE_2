@@ -1,0 +1,24 @@
+Reviewed local firmware set:
+
+1. GL-AR300M16 4.3.27
+   - gl_timer cron sink exists.
+   - ui RPC module reviewed in this local set did not expose update_langs.
+   - Not claimed as affected for this report.
+
+2. GL-MT3000 4.8.1
+   - ui RPC contains update_langs and gl_timer-related strings.
+   - ui validator lacks update_langs rule.
+   - gl_timer cron sink exists.
+   - Claimed affected by static evidence.
+
+3. GL-MT6000 4.9.0
+   - ui RPC contains update_langs and gl_timer-related strings.
+   - ui validator lacks update_langs rule.
+   - gl_timer cron sink exists.
+   - QEMU/rootfs proof confirmed malicious week persistence and generated-cron command execution.
+
+4. GL-X3000 4.8.3
+   - ui RPC contains update_langs and gl_timer-related strings.
+   - ui validator lacks update_langs rule.
+   - gl_timer cron sink exists.
+   - Claimed affected by static evidence.

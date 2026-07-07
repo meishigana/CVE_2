@@ -1,0 +1,23 @@
+Subject: GL.iNet 4.x ui.update_langs authenticated cron command injection
+
+Hello GL.iNet Security Team,
+
+I would like to report an authenticated command injection vulnerability in GL.iNet 4.x firmware.
+
+The `ui.update_langs` JSON-RPC method stores attacker-controlled schedule values into `gl_timer.langs.week`. `/etc/init.d/gl_timer` later writes this value into the root crontab without removing newline or tab characters:
+
+```sh
+echo "$min $hour * * $week gl_timer_control_langs 1 $week $hour $min" >> /tmp/gl_crontabs/crontabs.d/langs
+```
+
+Because `ui.update_langs` has no method-specific validator, the default RPC validator permits the control characters needed to inject a second cron line. An authenticated administrator can therefore schedule arbitrary root command execution.
+
+Locally reviewed affected firmware:
+
+- GL-MT3000 4.8.1
+- GL-MT6000 4.9.0
+- GL-X3000 4.8.3
+
+The attached material includes a technical report, PoC request shape, QEMU/rootfs verification script, captured output, and duplicate-risk notes. The QEMU/rootfs proof shows the generated injected cron line and marker-file command execution.
+
+Please confirm whether this should receive a new CVE identifier or be linked to an existing internal advisory.
