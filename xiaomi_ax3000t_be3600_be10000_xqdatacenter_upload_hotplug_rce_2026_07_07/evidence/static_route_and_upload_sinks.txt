@@ -1,0 +1,132 @@
+﻿.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:4:-- Source: xqdatacenter.lua
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:8:module("luci.controller.api.xqdatacenter", l_1)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:10:  local l_1 = node("api", "xqdatacenter")
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:19:  local l_4 = {"api", "xqdatacenter"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:22:  entry(l_4, l_5, l_6, 300)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:23:  if l_2.FEATURES.apps.xqdatacenter then
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:24:    if l_2.FEATURES.apps.xqdatacenter == "1" then
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:25:      l_4 = {"api", "xqdatacenter", "request"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:26:      entry(l_4, call("tunnelRequest"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:27:      l_4 = {"api", "xqdatacenter", "identify_device"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:28:      entry(l_4, call("identifyDevice"), _(""), 302, 8)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:29:      l_4 = {"api", "xqdatacenter", "download"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:30:      entry(l_4, call("download"), _(""), 303)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:31:      l_4 = {"api", "xqdatacenter", "upload"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:32:      entry(l_4, call("upload"), _(""), 304, 16)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:33:      l_4 = {"api", "xqdatacenter", "thumb"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:34:      entry(l_4, call("getThumb"), _(""), 305)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:35:      l_4 = {"api", "xqdatacenter", "device_id"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:36:      entry(l_4, call("getDeviceId"), _(""), 306)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:37:      l_4 = {"api", "xqdatacenter", "check_file_exist"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:38:      entry(l_4, call("checkFileExist"), _(""), 307)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:39:      l_4 = {"api", "xqdatacenter", "plugin_ssh"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:40:      entry(l_4, call("pluginSSH"), _(""), 308)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:41:      l_4 = {"api", "xqdatacenter", "plugin_ssh_status"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:42:      entry(l_4, call("pluginSSHStatus"), _(""), 309)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:43:      l_4 = {"api", "xqdatacenter", "fsys_probe"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:44:      entry(l_4, call("fsysProbe"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:45:      l_4 = {"api", "xqdatacenter", "fsys_resume"}
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:46:      entry(l_4, call("fsysResume"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:260:upload = function(a0)
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:264:  if l_3("/userdisk/upload.tmp") then
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:265:    l_2.unlink("/userdisk/upload.tmp")
+.\analysis\xiaomi\decompiled_lua\BE10000_api\xqdatacenter.lua:311:  l_2.rename("/userdisk/upload.tmp", _upval0.formvalue("target") .. "/" .. l_10 .. "." .. nil.match(nil, ".+%.(%w+)$"))
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:4:-- Source: xqdatacenter.lua
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:8:module("luci.controller.api.xqdatacenter", l_1)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:10:  local l_1 = node("api", "xqdatacenter")
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:19:  local l_4 = {"api", "xqdatacenter"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:22:  entry(l_4, l_5, l_6, 300)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:23:  if l_2.FEATURES.apps.xqdatacenter then
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:24:    if l_2.FEATURES.apps.xqdatacenter == "1" then
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:25:      l_4 = {"api", "xqdatacenter", "request"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:26:      entry(l_4, call("tunnelRequest"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:27:      l_4 = {"api", "xqdatacenter", "identify_device"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:28:      entry(l_4, call("identifyDevice"), _(""), 302, 8)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:29:      l_4 = {"api", "xqdatacenter", "download"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:30:      entry(l_4, call("download"), _(""), 303)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:31:      l_4 = {"api", "xqdatacenter", "upload"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:32:      entry(l_4, call("upload"), _(""), 304, 16)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:33:      l_4 = {"api", "xqdatacenter", "thumb"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:34:      entry(l_4, call("getThumb"), _(""), 305)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:35:      l_4 = {"api", "xqdatacenter", "device_id"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:36:      entry(l_4, call("getDeviceId"), _(""), 306)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:37:      l_4 = {"api", "xqdatacenter", "check_file_exist"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:38:      entry(l_4, call("checkFileExist"), _(""), 307)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:39:      l_4 = {"api", "xqdatacenter", "plugin_ssh"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:40:      entry(l_4, call("pluginSSH"), _(""), 308)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:41:      l_4 = {"api", "xqdatacenter", "plugin_ssh_status"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:42:      entry(l_4, call("pluginSSHStatus"), _(""), 309)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:43:      l_4 = {"api", "xqdatacenter", "fsys_probe"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:44:      entry(l_4, call("fsysProbe"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:45:      l_4 = {"api", "xqdatacenter", "fsys_resume"}
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:46:      entry(l_4, call("fsysResume"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:208:upload = function(a0)
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:212:  if l_3("/userdisk/upload.tmp") then
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:213:    l_2.unlink("/userdisk/upload.tmp")
+.\analysis\xiaomi\decompiled_lua\BE3600_api\xqdatacenter.lua:259:  l_2.rename("/userdisk/upload.tmp", _upval0.formvalue("target") .. "/" .. l_10 .. "." .. nil.match(nil, ".+%.(%w+)$"))
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:4:-- Source: AX3000T_rd03v2_api_xqdatacenter.lua
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:8:module("luci.controller.api.xqdatacenter", l_1)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:10:  local l_1 = node("api", "xqdatacenter")
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:19:  local l_4 = {"api", "xqdatacenter"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:22:  entry(l_4, l_5, l_6, 300)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:23:  if l_2.FEATURES.apps.xqdatacenter then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:24:    if l_2.FEATURES.apps.xqdatacenter == "1" then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:25:      l_4 = {"api", "xqdatacenter", "request"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:26:      entry(l_4, call("tunnelRequest"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:27:      l_4 = {"api", "xqdatacenter", "identify_device"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:28:      entry(l_4, call("identifyDevice"), _(""), 302, 8)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:29:      l_4 = {"api", "xqdatacenter", "download"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:30:      entry(l_4, call("download"), _(""), 303)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:31:      l_4 = {"api", "xqdatacenter", "upload"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:32:      entry(l_4, call("upload"), _(""), 304, 16)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:33:      l_4 = {"api", "xqdatacenter", "thumb"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:34:      entry(l_4, call("getThumb"), _(""), 305)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:35:      l_4 = {"api", "xqdatacenter", "device_id"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:36:      entry(l_4, call("getDeviceId"), _(""), 306)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:37:      l_4 = {"api", "xqdatacenter", "check_file_exist"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:38:      entry(l_4, call("checkFileExist"), _(""), 307)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:39:      l_4 = {"api", "xqdatacenter", "plugin_ssh"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:40:      entry(l_4, call("pluginSSH"), _(""), 308)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:41:      l_4 = {"api", "xqdatacenter", "plugin_ssh_status"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:42:      entry(l_4, call("pluginSSHStatus"), _(""), 309)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:43:      l_4 = {"api", "xqdatacenter", "fsys_probe"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:44:      entry(l_4, call("fsysProbe"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:45:      l_4 = {"api", "xqdatacenter", "fsys_resume"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:46:      entry(l_4, call("fsysResume"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:208:upload = function(a0)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:212:  if l_3("/userdisk/upload.tmp") then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:213:    l_2.unlink("/userdisk/upload.tmp")
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03v2_api_xqdatacenter.lua:259:  l_2.rename("/userdisk/upload.tmp", _upval0.formvalue("target") .. "/" .. l_10 .. "." .. nil.match(nil, ".+%.(%w+)$"))
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:4:-- Source: AX3000T_rd03_api_xqdatacenter.lua
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:8:module("luci.controller.api.xqdatacenter", l_1)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:10:  local l_1 = node("api", "xqdatacenter")
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:19:  local l_4 = {"api", "xqdatacenter"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:22:  entry(l_4, l_5, l_6, 300)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:23:  if l_2.FEATURES.apps.xqdatacenter then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:24:    if l_2.FEATURES.apps.xqdatacenter == "1" then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:25:      l_4 = {"api", "xqdatacenter", "request"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:26:      entry(l_4, call("tunnelRequest"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:27:      l_4 = {"api", "xqdatacenter", "identify_device"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:28:      entry(l_4, call("identifyDevice"), _(""), 302, 8)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:29:      l_4 = {"api", "xqdatacenter", "download"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:30:      entry(l_4, call("download"), _(""), 303)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:31:      l_4 = {"api", "xqdatacenter", "upload"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:32:      entry(l_4, call("upload"), _(""), 304, 16)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:33:      l_4 = {"api", "xqdatacenter", "thumb"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:34:      entry(l_4, call("getThumb"), _(""), 305)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:35:      l_4 = {"api", "xqdatacenter", "device_id"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:36:      entry(l_4, call("getDeviceId"), _(""), 306)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:37:      l_4 = {"api", "xqdatacenter", "check_file_exist"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:38:      entry(l_4, call("checkFileExist"), _(""), 307)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:39:      l_4 = {"api", "xqdatacenter", "plugin_ssh"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:40:      entry(l_4, call("pluginSSH"), _(""), 308)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:41:      l_4 = {"api", "xqdatacenter", "plugin_ssh_status"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:42:      entry(l_4, call("pluginSSHStatus"), _(""), 309)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:43:      l_4 = {"api", "xqdatacenter", "fsys_probe"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:44:      entry(l_4, call("fsysProbe"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:45:      l_4 = {"api", "xqdatacenter", "fsys_resume"}
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:46:      entry(l_4, call("fsysResume"), _(""), 301)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:208:upload = function(a0)
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:212:  if l_3("/userdisk/upload.tmp") then
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:213:    l_2.unlink("/userdisk/upload.tmp")
+.\analysis\xiaomi\decompiled_lua\AX3000T_rd03_api_xqdatacenter.lua:259:  l_2.rename("/userdisk/upload.tmp", _upval0.formvalue("target") .. "/" .. l_10 .. "." .. nil.match(nil, ".+%.(%w+)$"))

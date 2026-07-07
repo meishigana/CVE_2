@@ -1,0 +1,24 @@
+Subject: Vulnerability report: authenticated arbitrary file write to root command execution in Xiaomi router xqdatacenter upload API
+
+Hello Xiaomi Security Team,
+
+I am reporting an authenticated arbitrary file write vulnerability in Xiaomi router firmware affecting the LuCI controller `luci.controller.api.xqdatacenter`.
+
+The `/api/xqdatacenter/upload` handler uses the request-controlled `target` parameter as the destination directory and the multipart file metadata filename as the destination file name. The handler writes upload content to `/userdisk/upload.tmp`, creates the supplied target directory, and renames the temporary file to `target .. filename` without restricting the destination to user storage.
+
+An authenticated administrator session can therefore write a shell fragment to `/etc/hotplug.d/iface/`. The firmware `/sbin/hotplug-call` script sources files in that directory with `. $script`, so the uploaded file can execute commands as root during a later interface hotplug event.
+
+Confirmed affected firmware samples:
+
+- Xiaomi AX3000T rd03 firmware 1.0.64
+- Xiaomi AX3000T rd03v2 firmware 2.0.12
+- Xiaomi BE3600 rn01 firmware 1.0.74
+- Xiaomi BE10000 rp04 firmware 1.0.89
+
+The attached package includes static evidence, firmware hashes, qemu-user validation output, and a local harness that directly loads and invokes the original firmware Lua bytecode. Physical-device HTTP validation has not yet been performed.
+
+Suggested severity:
+
+CVSS v3.1 `AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H` = 7.2 High.
+
+Please let me know if you need additional firmware samples, test logs, or clarification.

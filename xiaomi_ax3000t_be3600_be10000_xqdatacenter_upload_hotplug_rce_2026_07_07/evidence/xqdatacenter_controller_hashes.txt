@@ -1,0 +1,4 @@
+83ade4205b67721331ab568e6f9a1b3d5cf0ea864efe014bcd97c3f40f00515e  /home/su/xiaomi_rootfs/AX3000T_miwifi_rd03_firmware_14680_1.0.64/01_rootfs/usr/lib/lua/luci/controller/api/xqdatacenter.lua
+83ade4205b67721331ab568e6f9a1b3d5cf0ea864efe014bcd97c3f40f00515e  /home/su/xiaomi_rootfs/AX3000T_miwifi_rd03v2_firmware_69eec_2.0.12/01_ubi_rootfs/usr/lib/lua/luci/controller/api/xqdatacenter.lua
+83ade4205b67721331ab568e6f9a1b3d5cf0ea864efe014bcd97c3f40f00515e  /home/su/xiaomi_rootfs/BE3600_miwifi_rn01_firmware_6fbc2_1.0.74/01_ubi_rootfs/usr/lib/lua/luci/controller/api/xqdatacenter.lua
+53ef12eb0a5c3251c9a933d4f7ba944a03180a904f26e3566381e8949644de73  /home/su/xiaomi_rootfs/BE10000_miwifi_rp04_firmware_76b5c_1.0.89/02_ubi_rootfs/usr/lib/lua/luci/controller/api/xqdatacenter.lua

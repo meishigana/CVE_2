@@ -1,0 +1,76 @@
+==== /home/su/xiaomi_rootfs/AX3000T_miwifi_rd03_firmware_14680_1.0.64/01_rootfs
+#!/bin/sh
+# Copyright (C) 2006-2016 OpenWrt.org
+
+export HOTPLUG_TYPE="$1"
+
+. /lib/functions.sh
+
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+LOGNAME=root
+USER=root
+export PATH LOGNAME USER
+export DEVICENAME="${DEVPATH##*/}"
+
+[ \! -z "$1" -a -d /etc/hotplug.d/$1 ] && {
+	for script in $(ls /etc/hotplug.d/$1/* 2>&-); do (
+		[ -f $script ] && . $script
+	); done
+}
+==== /home/su/xiaomi_rootfs/AX3000T_miwifi_rd03v2_firmware_69eec_2.0.12/01_ubi_rootfs
+#!/bin/sh
+# Copyright (C) 2006-2016 OpenWrt.org
+
+export HOTPLUG_TYPE="$1"
+
+. /lib/functions.sh
+
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+LOGNAME=root
+USER=root
+export PATH LOGNAME USER
+export DEVICENAME="${DEVPATH##*/}"
+
+[ \! -z "$1" -a -d /etc/hotplug.d/$1 ] && {
+	for script in $(ls /etc/hotplug.d/$1/* 2>&-); do (
+		[ -f $script ] && . $script
+	); done
+}
+==== /home/su/xiaomi_rootfs/BE3600_miwifi_rn01_firmware_6fbc2_1.0.74/01_ubi_rootfs
+#!/bin/sh
+# Copyright (C) 2006-2016 OpenWrt.org
+
+export HOTPLUG_TYPE="$1"
+
+. /lib/functions.sh
+
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+LOGNAME=root
+USER=root
+export PATH LOGNAME USER
+export DEVICENAME="${DEVPATH##*/}"
+
+[ \! -z "$1" -a -d /etc/hotplug.d/$1 ] && {
+	for script in $(ls /etc/hotplug.d/$1/* 2>&-); do (
+		[ -f $script ] && . $script
+	); done
+}
+==== /home/su/xiaomi_rootfs/BE10000_miwifi_rp04_firmware_76b5c_1.0.89/02_ubi_rootfs
+#!/bin/sh
+# Copyright (C) 2006-2016 OpenWrt.org
+
+export HOTPLUG_TYPE="$1"
+
+. /lib/functions.sh
+
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+LOGNAME=root
+USER=root
+export PATH LOGNAME USER
+export DEVICENAME="${DEVPATH##*/}"
+
+[ \! -z "$1" -a -d /etc/hotplug.d/$1 ] && {
+	for script in $(ls /etc/hotplug.d/$1/* 2>&-); do (
+		[ -f $script ] && . $script
+	); done
+}
